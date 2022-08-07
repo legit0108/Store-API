@@ -8,7 +8,8 @@ const start = async() =>{
     try{
         await connectDB(process.env.MONGO_URI)
         await Product.deleteMany() // delete all previous products from model , start from scratch
-        await Product.create(jsonProducts)  
+        await Product.create(jsonProducts)
+          
         console.log('Products inserted')
         process.exit(0) // success , exit the process
     }catch(error){
